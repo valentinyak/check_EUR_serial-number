@@ -1,0 +1,23 @@
+body {
+  margin-top: 10vh;
+  margin-left: 10vw;
+}
+.created-paragraph {
+  font-size: 20px;
+  font-weight: 700;
+  color: yellow;
+}
+body.isOk {
+  background-color: green;
+}
+body.isntOk {
+  background-color: red;
+}
+input {
+  border-color: violet;
+  border-width: 3px;
+  outline: none;
+}
+.white-text-color {
+  color: white;
+}
