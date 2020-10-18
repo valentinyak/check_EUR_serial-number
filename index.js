@@ -80,7 +80,8 @@ function addMarkup(status) {
     document.body.insertAdjacentHTML(
       'beforeend',
       `<p class="created-paragraph">Serial number is ${string}.</br>
-      This banknote was issued in ${countryName}.</p>`,
+      This banknote was issued in ${countryName}.</p>
+      <img src="https://static.tildacdn.com/tild3162-3431-4233-b539-393139353330/___-min.jpg">`,
     );
     document.body.classList.add('isOk');
   } else {
@@ -91,4 +92,10 @@ function addMarkup(status) {
     );
     document.body.classList.add('isntOk');
   }
+}
+
+{
+  /* <img
+  src="https://static.tildacdn.com/tild3737-3038-4435-a637-366365633030/___-min.jpg"
+></img>; */
 }
