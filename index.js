@@ -19,6 +19,7 @@ buttonEl.addEventListener('click', () => {
   findCheckSumOfSerialNumber();
   findSumFromLetterAndCheckSum();
   findCountryName();
+  clearMarkup();
   addMarkup(banknoteStat);
 });
 
@@ -28,7 +29,6 @@ function findNumberOfLetter() {
   alphabet.find((element, index) => {
     if (element === letter) {
       numberOfLetter = index + 1;
-      return numberOfLetter;
     }
   });
 }
@@ -38,7 +38,12 @@ function findCheckSumOfSerialNumber() {
     let number = Number(string[i]);
 
     sum += number;
-    newString = String(sum);
+  }
+  newString = String(sum);
+  checkSum = Number(newString[0]) + Number(newString[1]);
+
+  if (checkSum > 9) {
+    newString = String(checkSum);
     checkSum = Number(newString[0]) + Number(newString[1]);
   }
 }
@@ -58,8 +63,20 @@ function findCountryName() {
       banknoteStat = 'ok';
       countryName = name;
     }
-    console.log(banknoteStat);
   });
+}
+
+function clearMarkup() {
+  const createdParagraphEl = document.querySelector('p.created-paragraph');
+  const imgEl = document.querySelector('img');
+
+  if (createdParagraphEl && imgEl) {
+    createdParagraphEl.remove();
+    imgEl.remove();
+    return;
+  } else if (createdParagraphEl) {
+    createdParagraphEl.remove();
+  }
 }
 
 function addMarkup(status) {
